@@ -1,9 +1,3 @@
-# =========================================================================== #
-# File: ~/.bash/aliases.sh
-# Author: Jacky Alcine <yo@jacky.wtf>
-# Description: Entry point for all aliases.
-# =========================================================================== #
-
 load_alias() {
   [[ -x $1 ]] && source $1;
 }

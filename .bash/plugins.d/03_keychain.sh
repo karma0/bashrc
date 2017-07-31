@@ -1,11 +1,3 @@
-#!/usr/bin/env bash
-
-# =========================================================================== #
-# File: ~/.bash/plugins.d/keychain.sh
-# Author: Jacky Alcine <yo@jacky.wtf>
-# Description: Set up for keychain.
-# =========================================================================== #
-
 keychain_init() {
   echo "[keychain] Parsing...";
   declare expected_keychain_path="$HOME/.keychain/${HOSTNAME}-sh"
@@ -44,7 +36,7 @@ keychain_wipe() {
   fi
 }
 
-if [ -e "$(which keychain)" ]; then
+if [ -e "$(which keychain 2>/dev/null)" ]; then
   case $PROMPT_COMMAND in
     *keychain_source*)
       ;;
@@ -59,4 +51,4 @@ if [ -e "$(which keychain)" ]; then
   keychain_init
 fi
 
-keychain_init;
+[ -e "$HOME/.ssh/keys" ] && keychain_init

@@ -1,4 +1,4 @@
-if [ -e "$(which fasd 2>/dev/null)" ]; then
+if [ -x "$(which fasd 2>/dev/null)" ]; then
   # Eval our friend into the shell.
   eval "$(fasd --init bash-hook)";
 

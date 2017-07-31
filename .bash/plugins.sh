@@ -10,7 +10,7 @@ function load_plugin() {
 }
 
 function load_default_plugins() {
-  local _paths=$(find $HOME/.bash/plugins.d -type l -name "[0-8]*_*.sh" | sort);
+  local _paths=$(find $HOME/.bash/plugins.d -type f -name "[0-8]*_*.sh" | sort);
 
   for path in ${_paths}; do
     load_plugin ${path};
